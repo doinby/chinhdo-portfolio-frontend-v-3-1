@@ -1,17 +1,19 @@
 import About from './About';
-import TechILove from './TechI❤️';
+import TechILoveCopy from './TechI❤️copy';
 
 export default function Hero() {
 	return (
-		<section className='prose max-w-none mx-auto w-full flex items-center gap-12 px-20 py-16 shadow-md rounded-md'>
+		<section
+			id='hero'
+			className='prose max-w-none mx-auto w-full flex flex-col sm:flex items-center gap-12 px-4 pb-6 sm:px-20 sm:py-16 shadow-md rounded-md'>
 			<img
-				src='/images/profile-picture-3000.png'
+				src='/images/profile-picture-300.png'
 				alt={`Chinh's Profile Picture`}
-				className='m-0'
+				className='not-prose m-0 w-48 md:w-64 lg:w-[300px]'
 			/>
 			<div>
 				<About />
-				<TechILove />
+				<TechILoveCopy />
 			</div>
 		</section>
 	);

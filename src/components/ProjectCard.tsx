@@ -7,6 +7,8 @@ import ContentModal from './ContentModal';
 import { LastUpdated, LinkBtn } from '../utils/styledComponents';
 import { ExternalLink } from 'styled-icons/remix-line';
 import { IProjectCardProps } from '../utils/interfaces';
+import { LinkBtnSm } from '../utils/styledComponents';
+import { Github } from 'styled-icons/remix-fill';
 
 export default function ProjectCard({ data }: IProjectCardProps) {
 	const {
@@ -25,6 +27,7 @@ export default function ProjectCard({ data }: IProjectCardProps) {
 	// https://www.npmjs.com/package/date-fn?activeTab=code
 	// README.md
 	const lastUpdatedFormatted = dateFn.date(lastUpdated, 109);
+	const isPrivateRepo = title === 'The Forgotten Adoption Option App';
 
 	return (
 		<>
@@ -46,18 +49,31 @@ export default function ProjectCard({ data }: IProjectCardProps) {
 					View App <ExternalLink size='18' title={title} className='mb-0.5' />
 				</LinkBtn>
 				<div
+					id={title + ' Card'}
 					onClick={() => setOpen(!isOpen)}
-					className='relative group prose prose-a:no-underline shadow-md rounded-md pb-12 cursor-pointer transition ease-in-out motion-reduce:group-hover:-translate-y-1 group-hover:bg-orange-50 group-hover:shadow-lg'>
+					className='relative group prose prose-a:no-underline shadow-md rounded-md pb-6 lg:pb-12 space-y-2 sm:space-y-4 lg:space-y-6 cursor-pointer transition ease-in-out motion-reduce:group-hover:-translate-y-1 group-hover:bg-orange-50 group-hover:shadow-lg'>
 					<CardCoverImg
 						key={title + ' coverImg'}
 						live={live}
 						title={title}
 						coverImg={coverImg}
 					/>
-					<h3 className='px-12 text-slate-500 group-hover:text-orange-500'>
-						{title}
-					</h3>
-					<div className='flex justify-between items-baseline px-12'>
+					<div className='flex flex-wrap items-baseline gap-4 px-4 lg:px-12'>
+						<h3 className='mb-0 text-slate-500 group-hover:text-orange-500'>
+							{title}
+						</h3>
+						<LinkBtnSm href={live}>
+							View App
+							<ExternalLink size={14} className='mb-0.5' />
+						</LinkBtnSm>
+						{!isPrivateRepo && (
+							<LinkBtnSm href={github}>
+								View Source Code
+								<Github size={14} className='mb-0.5' />
+							</LinkBtnSm>
+						)}
+					</div>
+					<div className='not-prose flex flex-wrap gap-2 lg:gap-6 justify-between items-baseline px-4 lg:px-12'>
 						<Stacks title={title} stacks={stacks} />
 						<LastUpdated lastUpdated={lastUpdatedFormatted} />
 					</div>

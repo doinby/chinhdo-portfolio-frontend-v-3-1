@@ -15,7 +15,7 @@ export default function TechILove() {
 	const [isHidden, setHidden] = useState(true);
 
 	return (
-		<div className='not-prose flex items-bottom gap-x-6'>
+		<div className='not-prose flex flex-wrap sm:flex-row items-bottom gap-2 sm:gap-x-6'>
 			<p className='shrink-0'>
 				Tech I{' '}
 				<span>
@@ -23,7 +23,7 @@ export default function TechILove() {
 				</span>{' '}
 				:
 			</p>
-			<div className='flex flex-wrap gap-x-6'>
+			<div className='flex flex-wrap gap-2 sm:gap-x-6'>
 				<div className='flex items-center gap-1 text-orange-500'>
 					<React size='24' />
 					<p className='text-xs'>React</p>
@@ -36,7 +36,8 @@ export default function TechILove() {
 					<Tailwindcss size='24' />
 					<p className='text-xs'>Tailwind</p>
 				</div>
-				<div className={`${isHidden ? 'hidden' : 'flex'} flex-wrap gap-x-6`}>
+				<div
+					className={`${isHidden ? 'hidden' : 'flex flex-wrap'} gap-2 sm:gap-x-6`}>
 					<div className='flex items-center gap-1 text-orange-500'>
 						<Sass size='24' />
 						<p className='text-xs'>Sass</p>

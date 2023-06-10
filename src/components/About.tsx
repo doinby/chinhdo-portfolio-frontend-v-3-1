@@ -7,7 +7,7 @@ export default function About() {
 			</p>
 			<p>
 				As a{' '}
-				<em className='not-italic font-header text-3xl text-orange-500'>
+				<em className='not-italic font-header text-2xl sm:text-3xl text-orange-500'>
 					Front-end Developer
 				</em>{' '}
 				with a keen eye for visual communication, I'm passionate about incorporating

@@ -39,9 +39,11 @@ export default function Projects() {
 	}
 
 	return (
-		<section id='projects' className='prose max-w-none flex flex-col'>
-			<h2 className='text-center text-3xl mb-16'>Projects I've worked on:</h2>
-			<div className={`${error && 'hidden'} grid grid-cols-2 gap-16`}>
+		<section
+			id='projects'
+			className='prose max-w-none flex flex-col gap-0 lg:gap-16'>
+			<h2 className='text-center text-3xl'>Projects I've worked on:</h2>
+			<div className='flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-16'>
 				{data instanceof Array &&
 					data.map((projectData) => (
 						<ProjectCard key={projectData._id} data={projectData} />

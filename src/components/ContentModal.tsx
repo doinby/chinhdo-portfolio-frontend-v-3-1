@@ -30,7 +30,7 @@ export default function ContentModal({
 			onClose={() => setOpen(false)}
 			className='relative z-10'>
 			<div className='fixed inset-0 flex items-center justify-center bg-slate-800/50'>
-				<Dialog.Panel className='ml-72 relative w-screen h-screen px-24 py-28 bg-orange-50 rounded-tl-md rounded-bl-md overflow-y-scroll'>
+				<Dialog.Panel className='lg:ml-72 relative w-screen h-screen px-24 py-28 bg-orange-50 rounded-tl-md rounded-bl-md overflow-y-scroll'>
 					<Dialog.Title as='div' className='grid grid-rows-2 gap-4 w-fit mb-6'>
 						<div className='flex items-baseline gap-4'>
 							<h2 className='text-2xl text-orange-500'>{title}</h2>
