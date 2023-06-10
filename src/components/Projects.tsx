@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query';
-// import useFetch from '../hooks/useFetch';
 import ProjectCard from './ProjectCard';
 interface IProject {
 	_id: string;
@@ -16,11 +15,8 @@ const url = `${import.meta.env.VITE_API_URL}/projects`;
 
 const fetchProjects = async (): Promise<IProject> => {
 	try {
-		const res = await fetch(url, {
-			method: 'GET',
-			mode: 'no-cors',
-		});
-		return await res.json();
+		const res = await fetch(url);
+		return res.json();
 	} catch (err) {
 		throw new Error('Failed to fetch project, no server response!');
 	}
@@ -46,7 +42,6 @@ export default function Projects() {
 
 	if (isLoading) {
 		return (
-			// <section className='self-center w-16 h-16 rounded-full animate-spin border-4 border-solid border-slate-500 border-t-transparent'></section>
 			<section role='status' className='self-center'>
 				<svg
 					aria-hidden='true'

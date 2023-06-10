@@ -6,23 +6,9 @@ import CardDesc from './CardDesc';
 import ContentModal from './ContentModal';
 import { LinkBtn } from '../utils/styledComponents';
 import { ExternalLink } from 'styled-icons/remix-line';
+import { IProjectCardProps } from '../utils/interfaces';
 
-interface IProjectProps {
-	data: {
-		_id: string;
-		coverImg: string;
-		desc: string;
-		github: string;
-		lastUpdated: Date;
-		live: string;
-		stacks: [];
-		screenshots: [];
-		title: string;
-		content: string;
-	};
-}
-
-export default function ProjectCard({ data }: IProjectProps) {
+export default function ProjectCard({ data }: IProjectCardProps) {
 	const {
 		coverImg,
 		desc,
@@ -52,7 +38,9 @@ export default function ProjectCard({ data }: IProjectProps) {
 				github={github}
 			/>
 			<div className='relative flex justify-center group'>
-				<LinkBtn className='absolute z-10 top-36 hidden group-hover:flex items-center gap-1 shadow-md'>
+				<LinkBtn
+					href={live}
+					className='absolute z-10 top-36 hidden group-hover:flex items-center gap-1 shadow-md'>
 					View App <ExternalLink size='18' title={title} className='mb-0.5' />
 				</LinkBtn>
 				<article

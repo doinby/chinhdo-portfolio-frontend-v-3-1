@@ -1,4 +1,3 @@
-import { Props } from '@headlessui/react/dist/types';
 import React from 'react';
 
 export interface IProject {
@@ -14,9 +13,13 @@ export interface IProject {
 	content?: string;
 }
 
+export interface IProjectCardProps {
+	[key: string]: IProject;
+}
+
 export interface ICardCoverImgProps extends IProject {
 	isOpen: boolean;
-	setOpen: () => {};
+	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface IDefaultProps {
@@ -24,13 +27,8 @@ export interface IDefaultProps {
 	className?: string;
 }
 
-export interface ILinkBtn extends IDefaultProps {
-	url?: string;
-	target?: '_blank';
-	onClick?: () => {};
-}
+export interface ILinkBtn
+	extends IDefaultProps,
+		React.HTMLProps<HTMLButtonElement> {}
 
-export interface IContentModalProps extends IProject {
-	isOpen: boolean;
-	setOpen: ({}) => void;
-}
+export interface IContentModalProps extends ICardCoverImgProps, IProject {}

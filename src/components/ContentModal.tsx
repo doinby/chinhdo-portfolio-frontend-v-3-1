@@ -4,15 +4,13 @@ import remarkGfm from 'remark-gfm';
 import { Close } from 'styled-icons/remix-line';
 import { IContentModalProps } from '../utils/interfaces';
 
-export default ({
+export default function ContentModal({
 	isOpen,
 	setOpen,
 	title,
 	content,
 	screenshots,
-	live,
-	github,
-}: IContentModalProps) => {
+}: IContentModalProps) {
 	return (
 		<Dialog
 			as='div'
@@ -28,7 +26,7 @@ export default ({
 						as='article'
 						className='flex flex-wrap sm:flex-nowrap items-start gap-16'>
 						<div className='prose'>
-							<ReactMarkdown children={content} remarkPlugins={[remarkGfm]} />
+							<ReactMarkdown children={content || ''} remarkPlugins={[remarkGfm]} />
 						</div>
 						<aside className='prose w-[40%]'>
 							<div className='grid grid-cols-2 gap-6'>
@@ -54,4 +52,4 @@ export default ({
 			</div>
 		</Dialog>
 	);
-};
+}
