@@ -25,10 +25,7 @@ const fetchProjects = async (): Promise<IProject> => {
 };
 
 export default function Projects() {
-	const { isLoading, isError, data, error } = useQuery(
-		['projects'],
-		fetchProjects
-	);
+	const { isLoading, isError, data } = useQuery(['projects'], fetchProjects);
 
 	if (isError) {
 		return <NotFound />;
