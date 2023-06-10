@@ -21,6 +21,7 @@ export default function ContentModal({
 }: IContentModalProps) {
 	const part1 = content && content.slice(0, content.indexOf('### Built with'));
 	const part2 = content && content.slice(content.indexOf('### Built with'));
+	const isPrivateRepo = title === 'The Forgotten Adoption Option App';
 
 	return (
 		<Dialog
@@ -34,11 +35,11 @@ export default function ContentModal({
 						<div className='flex items-baseline gap-4'>
 							<h2 className='text-2xl text-orange-500'>{title}</h2>
 							<LinkBtnSm href={live}>
-								View Live
+								View App
 								<ExternalLink size={14} className='mb-0.5' />
 							</LinkBtnSm>
-							<LinkBtnSm href={github}>
-								Source Code
+							<LinkBtnSm href={github} disabled={isPrivateRepo}>
+								{isPrivateRepo ? 'Source Code Unavailable' : 'View Source Code'}
 								<Github size={14} className='mb-0.5' />
 							</LinkBtnSm>
 						</div>
