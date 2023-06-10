@@ -3,10 +3,10 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Close } from 'styled-icons/remix-line';
 import { IContentModalProps } from '../utils/interfaces';
-import { LinkBtnSm } from '../utils/styledComponents';
+import { LastUpdated, LinkBtnSm } from '../utils/styledComponents';
 import { ExternalLink } from 'styled-icons/remix-line';
 import { Github } from 'styled-icons/remix-fill';
-import CardSubtitle from './CardSubtitle';
+import Stacks from './Stacks';
 
 export default function ContentModal({
 	isOpen,
@@ -17,7 +17,7 @@ export default function ContentModal({
 	live,
 	github,
 	stacks,
-	lastUpdatedFormatted,
+	lastUpdated,
 }: IContentModalProps) {
 	const part1 = content && content.slice(0, content.indexOf('### Built with'));
 	const part2 = content && content.slice(content.indexOf('### Built with'));
@@ -42,11 +42,10 @@ export default function ContentModal({
 								<Github size={14} className='mb-0.5' />
 							</LinkBtnSm>
 						</div>
-						<CardSubtitle
-							title={title}
-							stacks={stacks}
-							lastUpdated={lastUpdatedFormatted}
-						/>
+						<div className='flex flex-wrap justify-between gap-4'>
+							<Stacks title={title} stacks={stacks} />
+							<LastUpdated lastUpdated={lastUpdated} />
+						</div>
 					</Dialog.Title>
 					<Dialog.Description
 						as='article'

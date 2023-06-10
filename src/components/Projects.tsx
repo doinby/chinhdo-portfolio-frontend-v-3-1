@@ -64,7 +64,7 @@ export default function Projects() {
 	}
 
 	return (
-		<section className='prose max-w-none flex flex-col'>
+		<section id='projects' className='prose max-w-none flex flex-col'>
 			<h2 className='text-center text-3xl mb-16'>Projects I've worked on:</h2>
 			<div className={`${error && 'hidden'} grid grid-cols-2 gap-16`}>
 				{data instanceof Array &&
