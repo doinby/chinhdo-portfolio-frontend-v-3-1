@@ -31,4 +31,6 @@ export interface ILinkBtn
 	extends IDefaultProps,
 		React.HTMLProps<HTMLButtonElement> {}
 
-export interface IContentModalProps extends ICardCoverImgProps, IProject {}
+export interface IContentModalProps extends ICardCoverImgProps, IProject {
+	lastUpdatedFormatted: Date;
+}

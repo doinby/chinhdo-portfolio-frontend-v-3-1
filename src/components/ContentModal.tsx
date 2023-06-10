@@ -3,7 +3,10 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Close } from 'styled-icons/remix-line';
 import { IContentModalProps } from '../utils/interfaces';
-import { LinkBtn } from '../utils/styledComponents';
+import { LinkBtnSm } from '../utils/styledComponents';
+import { ExternalLink } from 'styled-icons/remix-line';
+import { Github } from 'styled-icons/remix-fill';
+import CardSubtitle from './CardSubtitle';
 
 export default function ContentModal({
 	isOpen,
@@ -11,7 +14,14 @@ export default function ContentModal({
 	title,
 	content,
 	screenshots,
+	live,
+	github,
+	stacks,
+	lastUpdatedFormatted,
 }: IContentModalProps) {
+	const part1 = content && content.slice(0, content.indexOf('### Built with'));
+	const part2 = content && content.slice(content.indexOf('### Built with'));
+
 	return (
 		<Dialog
 			as='div'
@@ -20,14 +30,29 @@ export default function ContentModal({
 			className='relative z-10'>
 			<div className='fixed inset-0 flex items-center justify-center bg-slate-800/50'>
 				<Dialog.Panel className='ml-72 relative w-screen h-screen px-24 py-28 bg-orange-50 rounded-tl-md rounded-bl-md overflow-y-scroll'>
-					<Dialog.Title as='h2' className='mb-6 text-3xl text-orange-500'>
-						{title}
+					<Dialog.Title as='div' className='grid grid-rows-2 gap-4 w-fit mb-6'>
+						<div className='flex items-baseline gap-4'>
+							<h2 className='text-2xl text-orange-500'>{title}</h2>
+							<LinkBtnSm href={live}>
+								View Live
+								<ExternalLink size={14} className='mb-0.5' />
+							</LinkBtnSm>
+							<LinkBtnSm href={github}>
+								Source Code
+								<Github size={14} className='mb-0.5' />
+							</LinkBtnSm>
+						</div>
+						<CardSubtitle
+							title={title}
+							stacks={stacks}
+							lastUpdated={lastUpdatedFormatted}
+						/>
 					</Dialog.Title>
 					<Dialog.Description
 						as='article'
 						className='prose prose-headings:text-orange-500 max-w-none grid grid-cols-5 items-start gap-16'>
 						<ReactMarkdown
-							children={content || ''}
+							children={part1 || ''}
 							remarkPlugins={[remarkGfm]}
 							className='col-span-3 [&>*:first-child]:mt-0'
 						/>
@@ -39,6 +64,11 @@ export default function ContentModal({
 										<img src={url} alt={`${title}'s screenshot ${idx}`} className='m-0' />
 									</button>
 								))}
+							<ReactMarkdown
+								children={part2 || ''}
+								remarkPlugins={[remarkGfm]}
+								className='col-span-2 [&>*:first-child]:mt-0'
+							/>
 						</div>
 					</Dialog.Description>
 
