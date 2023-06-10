@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# ignores all .md files
+*.md
+
+# does not ignore the README.md file
+!README.md

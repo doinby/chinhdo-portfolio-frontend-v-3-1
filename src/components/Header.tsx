@@ -9,7 +9,7 @@ export default function Header() {
 					doinby.co
 				</a>
 				<p className='text-sm text-slate-400'>
-					<small>v.2.0</small>
+					<small>v.3.1</small>
 				</p>
 			</div>
 			<ul>
