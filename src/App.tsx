@@ -1,3 +1,13 @@
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
+
 export default function App() {
-	return <p className='text-green-500'>App Works!</p>;
+	return (
+		<>
+			<Header />
+			<Main />
+			<Footer />
+		</>
+	);
 }
