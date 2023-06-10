@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: 'MinigapLight';
+		font-weight: 400;
+		src: url(./fonts/MinigapLight.woff) format('woff');
+	}
+	@font-face {
+		font-family: 'MinigapBold';
+		font-weight: 700;
+		src: url(./fonts/MinigapBold.woff) format('woff');
+	}
+
+	html,
+	body,
+	#root {
+		@apply h-full;
+	}
+
+	#root {
+		@apply flex flex-col;
+	}
+}
+
+@layer components {
+	header,
+	main,
+	footer {
+		@apply flex;
+	}
+
+	header,
+	footer {
+		@apply container mx-auto px-16 py-8;
+	}
+
+	main {
+		@apply container mx-auto px-16;
+	}
+}
+
+@layer utilities {
+	* {
+		/* @apply outline outline-1 outline-pink-500; */
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-header tracking-wider;
+	}
+
+	p {
+		@apply tracking-wide;
+	}
+}
