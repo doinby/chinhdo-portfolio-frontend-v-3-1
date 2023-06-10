@@ -5,7 +5,7 @@ export default function Hero() {
 	return (
 		<section
 			id='hero'
-			className='prose max-w-none mx-auto w-full flex flex-col sm:flex items-center gap-12 px-4 pb-6 sm:px-20 sm:py-16 shadow-md rounded-md'>
+			className='prose max-w-none mx-auto w-full flex flex-col sm:flex-row items-center gap-12 px-4 pb-6 sm:px-20 sm:py-16 shadow-md rounded-md'>
 			<img
 				src='/images/profile-picture-300.png'
 				alt={`Chinh's Profile Picture`}
