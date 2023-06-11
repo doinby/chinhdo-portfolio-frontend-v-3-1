@@ -7,8 +7,6 @@ import ContentModal from './ContentModal';
 import { LastUpdated, LinkBtn } from '../utils/styledComponents';
 import { ExternalLink } from 'styled-icons/remix-line';
 import { IProjectCardProps } from '../utils/interfaces';
-import { LinkBtnSm } from '../utils/styledComponents';
-import { Github } from 'styled-icons/remix-fill';
 
 export default function ProjectCard({ data }: IProjectCardProps) {
 	const {
@@ -27,7 +25,6 @@ export default function ProjectCard({ data }: IProjectCardProps) {
 	// https://www.npmjs.com/package/date-fn?activeTab=code
 	// README.md
 	const lastUpdatedFormatted = dateFn.date(lastUpdated, 109);
-	const isPrivateRepo = title === 'The Forgotten Adoption Option App';
 
 	return (
 		<>
