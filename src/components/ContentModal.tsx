@@ -69,6 +69,7 @@ export default function ContentModal({
 										key={`${title}'s screenshot ${idx}`}
 										src={url}
 										alt={`${title}'s screenshot ${idx}`}
+										className='mx-auto'
 									/>
 								))}
 						</div>
