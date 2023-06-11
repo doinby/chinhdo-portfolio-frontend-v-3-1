@@ -29,11 +29,11 @@ export default function ContentModal({
 			open={isOpen}
 			onClose={() => setOpen(false)}
 			className='relative z-10'>
-			<div className='fixed inset-0 flex items-center justify-center bg-slate-800/50'>
-				<Dialog.Panel className='lg:ml-72 relative w-screen h-screen px-24 py-28 bg-orange-50 rounded-tl-md rounded-bl-md overflow-y-scroll'>
-					<Dialog.Title as='div' className='grid grid-rows-2 gap-4 w-fit mb-6'>
-						<div className='flex items-baseline gap-4'>
-							<h2 className='text-2xl text-orange-500'>{title}</h2>
+			<div className='fixed inset-0 flex items-center justify-center lg:bg-slate-800/50'>
+				<Dialog.Panel className='lg:ml-36 xl:ml-72 relative w-screen h-screen px-8 py-12 sm:px-16 sm:py-20 lg:px-24 lg:py-28 bg-orange-50 rounded-tl-md rounded-bl-md overflow-y-scroll'>
+					<Dialog.Title as='div' className='flex flex-col gap-4 w-fit sm:mb-6'>
+						<div className='flex flex-wrap items-baseline gap-4'>
+							<h2 className='w-full sm:w-fit text-2xl text-orange-500'>{title}</h2>
 							<LinkBtnSm href={live}>
 								View App
 								<ExternalLink size={14} className='mb-0.5' />
@@ -43,36 +43,41 @@ export default function ContentModal({
 								<Github size={14} className='mb-0.5' />
 							</LinkBtnSm>
 						</div>
-						<div className='flex flex-wrap justify-between gap-4'>
+						<div className='flex flex-wrap flex-col sm:flex-row justify-between gap-4'>
 							<Stacks title={title} stacks={stacks} />
 							<LastUpdated lastUpdated={lastUpdated} />
 						</div>
 					</Dialog.Title>
 					<Dialog.Description
 						as='article'
-						className='prose prose-headings:text-orange-500 max-w-none grid grid-cols-5 items-start gap-16'>
+						className='prose prose-headings:text-orange-500 max-w-none flex flex-col sm:grid sm:grid-cols-5 items-start gap-0 sm:gap-16'>
 						<ReactMarkdown
 							children={part1 || ''}
 							remarkPlugins={[remarkGfm]}
-							className='col-span-3 [&>*:first-child]:mt-0'
+							className='col-span-3 sm:[&>*:first-child]:mt-0'
 						/>
-						<div className='col-span-2 grid grid-cols-2 gap-6'>
-							<h3 className='col-span-2 mt-0'>Screenshots</h3>
+						<ReactMarkdown
+							children={part2 || ''}
+							remarkPlugins={[remarkGfm]}
+							className='col-span-2 sm:[&>*:first-child]:mt-0'
+						/>
+						<div id={title + ' Screenshots'} className='col-span-5'>
+							<h3>Screenshots</h3>
 							{Array.isArray(screenshots) &&
 								screenshots.map((url, idx) => (
-									<button key={`${title}'s screenshot ${idx}`}>
-										<img src={url} alt={`${title}'s screenshot ${idx}`} className='m-0' />
-									</button>
+									<img
+										key={`${title}'s screenshot ${idx}`}
+										src={url}
+										alt={`${title}'s screenshot ${idx}`}
+									/>
 								))}
-							<ReactMarkdown
-								children={part2 || ''}
-								remarkPlugins={[remarkGfm]}
-								className='col-span-2 [&>*:first-child]:mt-0'
-							/>
 						</div>
 					</Dialog.Description>
 
-					<button onClick={() => setOpen(false)} className='absolute top-6 left-8'>
+					<button
+						id='close-btn'
+						onClick={() => setOpen(false)}
+						className='absolute top-0 left-0 p-4 sm:p-8'>
 						<Close size='32' className='text-slate-500 hover:text-orange-500' />
 					</button>
 				</Dialog.Panel>
