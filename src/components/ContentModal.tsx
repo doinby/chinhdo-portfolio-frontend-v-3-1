@@ -50,16 +50,16 @@ export default function ContentModal({
 					</Dialog.Title>
 					<Dialog.Description
 						as='article'
-						className='prose prose-headings:text-orange-500 max-w-none flex flex-col sm:grid sm:grid-cols-5 items-start gap-0 sm:gap-16'>
+						className='prose prose-headings:text-orange-500 max-w-none flex flex-col sm:grid sm:grid-cols-5 items-start gap-0 sm:gap-x-16'>
 						<ReactMarkdown
 							children={part1 || ''}
 							remarkPlugins={[remarkGfm]}
-							className='col-span-3 sm:[&>*:first-child]:mt-0'
+							className='col-span-3 sm:[&>*:first-child]:mt-0 sm:[&>*:last-child]:mb-0'
 						/>
 						<ReactMarkdown
 							children={part2 || ''}
 							remarkPlugins={[remarkGfm]}
-							className='col-span-2 sm:[&>*:first-child]:mt-0'
+							className='col-span-2 sm:[&>*:first-child]:mt-0 sm:[&>*:last-child]:mb-0'
 						/>
 						<div id={title + ' Screenshots'} className='col-span-5'>
 							<h3>Screenshots</h3>
