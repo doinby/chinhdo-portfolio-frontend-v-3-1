@@ -15,7 +15,7 @@ export default function TechILove() {
 	const [isHidden, setHidden] = useState(true);
 
 	return (
-		<div className='not-prose flex flex-wrap sm:flex-row items-bottom gap-2 sm:gap-x-6'>
+		<div className='not-prose flex flex-wrap flex-row items-bottom gap-2 sm:gap-x-6'>
 			<p className='shrink-0'>
 				Tech I{' '}
 				<span>

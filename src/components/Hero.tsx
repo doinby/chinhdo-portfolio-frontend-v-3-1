@@ -1,5 +1,5 @@
 import About from './About';
-import TechILoveCopy from './TechI❤️copy';
+import TechILove from './TechI❤️copy';
 
 export default function Hero() {
 	return (
@@ -13,7 +13,7 @@ export default function Hero() {
 			/>
 			<div>
 				<About />
-				<TechILoveCopy />
+				<TechILove />
 			</div>
 		</section>
 	);
