@@ -22,18 +22,8 @@ export default function Learning() {
 				<span className='text-orange-500'>
 					<Typescript size='24' /> Typescript
 				</span>{' '}
-				and will greatly appreciate any guidance of these areas
+				and will greatly appreciate any guidance in these areas
 			</p>
-			{/* <div className='flex flex-wrap justify-evenly'>
-				<SkillTag className='relative flex-col not-prose text-sm sm:text-lg'>
-					<Csharp className='w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24' />
-					<p>C#</p>
-				</SkillTag>
-				<SkillTag className='flex-col not-prose text-sm sm:text-lg'>
-					<Typescript className='w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24' />
-					<p>Typescript</p>
-				</SkillTag>
-			</div> */}
 		</section>
 	);
 }
