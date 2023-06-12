@@ -3,7 +3,7 @@ import { IDefaultProps, ILastUpdated, ILinkBtn } from './interfaces';
 export function SkillTag({ className, children }: IDefaultProps) {
 	return (
 		<div
-			className={`${className} flex items-center gap-1 text-orange-500 text-xs`}>
+			className={`${className} inline-flex items-center gap-1 text-orange-500 text-xs`}>
 			{children}
 		</div>
 	);
