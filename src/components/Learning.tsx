@@ -1,6 +1,4 @@
 import { Csharp, Typescript } from 'styled-icons/simple-icons';
-import { SkillTag } from '../utils/styledComponents';
-import { Question } from 'styled-icons/remix-line';
 
 export default function Learning() {
 	return (

@@ -1,5 +1,5 @@
 import About from './About';
-import TechILove from './TechI❤️copy';
+import TechILove from './TechI❤️';
 
 export default function Hero() {
 	return (
