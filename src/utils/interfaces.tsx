@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 
 export interface IProject {
 	_id?: string;
@@ -37,4 +37,9 @@ export interface IContentModalProps extends ICardCoverImgProps, IProject {
 
 export interface ILastUpdated extends React.HTMLProps<HTMLParagraphElement> {
 	lastUpdated: Date;
+}
+
+export interface IUpdateToast extends IDefaultProps {
+	isOpen: boolean;
+	setOpen: Dispatch<SetStateAction<boolean>>;
 }
