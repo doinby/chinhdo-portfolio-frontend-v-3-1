@@ -25,11 +25,11 @@ export default function UpdateToast({
 						}, duration)
 					}
 					onEscapeKeyDown={() => setOpen(false)}>
-					{/* <Toast.Close
+					<Toast.Close
 						onClick={() => setOpen(false)}
 						className='absolute top-[-4px] right-0'>
-						<Close size='18' className='text-slate-500' />
-					</Toast.Close> */}
+						<Close size='16' className='text-slate-500' />
+					</Toast.Close>
 					<Toast.Description className='w-48 max-w-48 px-2 py-1 rounded text-slate-500 bg-slate-200 shadow-md shadow-slate-500/20'>
 						<small>
 							🎉 Brand new site! Visit old version at 👉{' '}
